@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercicio01 {
 
     public static void main(String[] args) {
-        System.out.println("Programa para pegar antecessor e sucessor de um numero");
+        System.out.println("escreva um numero para ver antecessor e sucessor");
         Scanner sc = new Scanner(System.in);
         System.out.println("Entre com o numero: ");
         int numero1 = sc.nextInt();
