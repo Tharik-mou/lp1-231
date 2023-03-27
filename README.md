@@ -13,3 +13,6 @@ Repositorio destinado aos conteúdos de Linguagem de Programação 1.
 - Semana 03
     - Criação de projetos Java
     - Introdução a Linguagem Java
+- Semana 04
+    - Estruturas de controle
+    - Exercicios
