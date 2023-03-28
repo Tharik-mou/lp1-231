@@ -3,15 +3,11 @@ package semana04;
 import java.net.InetAddress;
 import java.time.temporal.ValueRange;
 
-public class EstruturaControle {
-    public static void main(String[] args) {
-        //if
+import semana06.Calculadora;
+// soma dois números
 
-         int idade = 17;
-        final int MAIORIDADE = 18;
-        if(idade >= MAIORIDADE) {
-            System.out.println("Maior de idade");
-        }
+public class EstruturaControle {
+    public static void main(String[] args) {// soma dois números
 
         //if/else
         boolean ligado = true;
@@ -22,7 +18,7 @@ public class EstruturaControle {
         }
         
 
-        //switch
+        //switchDois
         //char, byte, short, int
         //enum
         int x = 3;
@@ -91,6 +87,4 @@ public class EstruturaControle {
         }
             
         }
-        
-
-    }
+}
