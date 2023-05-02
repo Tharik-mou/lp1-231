@@ -16,3 +16,11 @@ Repositorio destinado aos conteúdos de Linguagem de Programação 1.
 - Semana 04
     - Estruturas de controle
     - Exercicios
+- Semana 05
+    - Exercicios IMC e aquario
+- Semana 06
+    - Metodos  e Test
+- Semana 07
+    - Exercicios de revisão
+- Semana 10
+    - Introdução a Programação Orientada a Objeto (POO)
