@@ -2,9 +2,10 @@ package semana11.exercicios;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals; 
-
+import static org.junit.jupiter.api.Assertions.assertArrayEquals; 
 
 public class AquarioTest {
+
     @Test
     public void testCalcularVolume(){
         Aquario aquario = new Aquario();
@@ -17,6 +18,7 @@ public class AquarioTest {
 
         assertEquals(250.0, volume);
     }
+
     @Test
     public void testCalcularVolume2(){
         Aquario aquario = new Aquario();
@@ -43,5 +45,18 @@ public class AquarioTest {
         double potencia = aquario.calcularPotenciaDoTermostato(temperaturaDesejada, temperaturaAmbiente);
 
         assertEquals(162.5, potencia);
+    }
+
+    @Test
+    public void calcularQuantidadeLitrosDuasETr3sVezes(){
+        Aquario aquario = new Aquario();
+
+        aquario.altura = 50.0;
+        aquario.comprimento = 100.0;
+        aquario.largura = 50.0;
+
+        double[] litros = aquario.calcularQuantidadeLitrosFiltro();
+        double[] esperado = {500, 750};
+        assertArrayEquals(esperado, litros);
     }
 }

@@ -3,6 +3,7 @@ package semana11.exercicios;
 public class Pessoa {
     double peso;
     double altura;
+    double pesoideal;
 
     public double calcularIMC(){
         double imc = peso / (altura * altura);
@@ -31,15 +32,14 @@ public class Pessoa {
     }
 
     public String getSituacao(){
-        double pesoAbacate = peso - (24.9 * altura * altura);
-        if (pesoAbacate < 0.0) {
-            return "GANHAR";
-        } else 
-        if(pesoAbacate > 0.0){
-            return "PERDER";
-        }
-        else{
+        if(calcularIMC() > 18.5 && calcularIMC() < 25){
             return "NORMAL";
+        }else{
+            if (pesoideal < 0){
+                return "GANHAR";
+            }else {
+                return "PERDER";
+            }
         }
     }
 }
