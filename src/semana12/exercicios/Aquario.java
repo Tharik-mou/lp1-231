@@ -6,6 +6,16 @@ public class Aquario {
     public double largura;
     public double altura;
 
+    public Aquario(double comprimento, double altura, double largura){
+        this.comprimento = comprimento;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Aquario(double valor){
+        this (valor, valor, valor);
+    }
+
     public double calcularVolume() {
         return ((comprimento * largura * altura) / 1000);
     }

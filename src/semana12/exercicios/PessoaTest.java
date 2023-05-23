@@ -1,13 +1,41 @@
 package semana12.exercicios;
 
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals; 
 
 public class PessoaTest {
+
+    @Test
+    public void testIndicarValoresParaVariaveis(){
+        Pessoa pessoa = new Pessoa(87.0, 1.80);
+
+        assertEquals(87.0, pessoa.peso);
+        assertEquals(1.80, pessoa.altura);
+    }
+
+    @Test
+    public void testIndicarPesoInvalido(){
+        Pessoa pessoa = new Pessoa(0, 1.80);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Pessoa(0, 1.80);
+        });
+    }
+
+    @Test
+    public void testIndicarAlturaInvalida(){
+        Pessoa pessoa = new Pessoa(65.0, 0.0);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Pessoa(65.0, 0.0);
+        });
+    }
     
     @Test
-    public void calcularIMC(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMC(){
+        Pessoa pessoa = new Pessoa(87.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 87;
@@ -18,8 +46,8 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularIMCAbaixoDoPeso(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMCAbaixoDoPeso(){
+        Pessoa pessoa = new Pessoa(50.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 50;
@@ -31,8 +59,8 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularIMCPesoIdeal(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMCPesoIdeal(){
+        Pessoa pessoa = new Pessoa(65.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 65;
@@ -45,8 +73,8 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularIMCAcimaDoPeso(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMCAcimaDoPeso(){
+        Pessoa pessoa = new Pessoa(90.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 90;
@@ -58,8 +86,8 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularIMCObesidadeI(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMCObesidadeI(){
+        Pessoa pessoa = new Pessoa(100.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 100;
@@ -71,8 +99,8 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularIMCObesidadeII(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMCObesidadeII(){
+        Pessoa pessoa = new Pessoa(120.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 120;
@@ -84,8 +112,8 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularIMCObesidadeIII(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularIMCObesidadeIII(){
+        Pessoa pessoa = new Pessoa(140.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 140;
@@ -97,34 +125,32 @@ public class PessoaTest {
     }
 
     @Test
-    public void calcularSituaçãoGanhar(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularSituaçãoGanhar(){
+        Pessoa pessoa = new Pessoa(40.0, 1.80);
 
         pessoa.altura = 1.80;
-        pessoa.peso = 50;
+        pessoa.peso = 40;
 
         String situacao = pessoa.getSituacao();
-        String esperado = "GANHAR";
 
-        assertEquals(esperado, situacao);
+        assertEquals("GANHAR", situacao);
     }
 
     @Test
-    public void calcularSituaçãoPerder(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularSituaçãoPerder(){
+        Pessoa pessoa = new Pessoa(90.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 90;
 
         String situacao = pessoa.getSituacao();
-        String esperado = "PERDER";
 
-        assertEquals(esperado, situacao);
+        assertEquals("PERDER", situacao);
     }
 
     @Test
-    public void calcularSituaçãoNormal(){
-        Pessoa pessoa = new Pessoa();
+    public void testCalcularSituaçãoNormal(){
+        Pessoa pessoa = new Pessoa(60.0, 1.80);
 
         pessoa.altura = 1.80;
         pessoa.peso = 60;

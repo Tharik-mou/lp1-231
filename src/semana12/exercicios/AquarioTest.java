@@ -5,10 +5,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals; 
 
 public class AquarioTest {
+    
+    @Test
+    public void testIndicarValoresParaAsVariaveis(){
+        Aquario aquario = new Aquario(100.0, 50.0, 50.0);
+
+        assertEquals(100.0, aquario.comprimento);
+        assertEquals(50.0, aquario.altura);
+        assertEquals(50.0, aquario.largura);
+    }
+
+    @Test
+    public void testIndicarUmUnicoValor(){
+        Aquario aquario = new Aquario(50.0, 50.0, 50.0);
+
+        assertEquals(50.0, aquario.comprimento);
+        assertEquals(50.0, aquario.altura);
+        assertEquals(50.0, aquario.largura);
+    }
 
     @Test
     public void testCalcularVolume(){
-        Aquario aquario = new Aquario();
+        Aquario aquario = new Aquario(100.0, 50.0, 50.0);
 
         aquario.altura = 50.0;
         aquario.comprimento = 100.0;
@@ -21,7 +39,7 @@ public class AquarioTest {
 
     @Test
     public void testCalcularVolume2(){
-        Aquario aquario = new Aquario();
+        Aquario aquario = new Aquario(100.0, 50.0, 0.0);
 
         aquario.altura = 50.0;
         aquario.comprimento = 100.0;
@@ -34,7 +52,7 @@ public class AquarioTest {
 
     @Test
     public void testCalcularPotenciaDoTermostato(){
-        Aquario aquario = new Aquario();
+        Aquario aquario = new Aquario(100.0, 50.0, 50.0);
 
         aquario.altura = 50.0;
         aquario.comprimento = 100.0;
@@ -49,7 +67,7 @@ public class AquarioTest {
 
     @Test
     public void calcularQuantidadeLitrosDuasETr3sVezes(){
-        Aquario aquario = new Aquario();
+        Aquario aquario = new Aquario(100.0, 50.0, 50.0);
 
         aquario.altura = 50.0;
         aquario.comprimento = 100.0;

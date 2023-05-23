@@ -5,6 +5,17 @@ public class Pessoa {
     double altura;
     double pesoideal;
 
+    public Pessoa(double peso, double altura){
+        if(peso <= 0)
+            throw new IllegalArgumentException("Peso Invalido");
+
+        if(altura <= 0)
+            throw new IllegalArgumentException("Altura Invalida");
+
+        this.peso = peso;
+        this.altura = altura;
+    }
+
     public double calcularIMC(){
         double imc = peso / (altura * altura);
         return imc;
@@ -35,7 +46,7 @@ public class Pessoa {
         if(calcularIMC() > 18.5 && calcularIMC() < 25){
             return "NORMAL";
         }else{
-            if (pesoideal < 0){
+            if (pesoideal < 65.0){
                 return "GANHAR";
             }else {
                 return "PERDER";
