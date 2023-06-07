@@ -1,9 +1,12 @@
 package semana14;
 
+import semana14.exercicios.Aquario;
+
 public class Programa {
     public static void main(String[] args) {
-        Quadrado quadrado = new Quadrado(-10.0);
-        quadrado.setLado1(-10.0);
+        Quadrado quadrado = new Quadrado(10.0);
+        quadrado.setLado1(10.0);
+        Aquario aqua1 = new Aquario(10,10, 10);
 
         // se você colocar o valor em Quadrado usando o Construtor, não há necessidade
         // de declarar a variavel como abaixo
@@ -13,6 +16,9 @@ public class Programa {
         System.out.println(quadrado.calcularArea());
         System.out.println(area); */
 
+        System.out.println(aqua1.getAltura());
+
+        
         System.out.println(quadrado.calcularArea());
         System.out.println(quadrado.calcularPerimetro());
 

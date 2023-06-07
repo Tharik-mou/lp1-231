@@ -7,9 +7,9 @@ public class Aquario {
     public double altura;
 
     public Aquario(double comprimento, double altura, double largura){
-        this.comprimento = comprimento;
-        this.altura = altura;
-        this.largura = largura;
+        this.setComprimento(comprimento);
+        this.setAltura(altura);
+        this.setLargura(largura);
     }
 
     public Aquario(double valor){
@@ -29,5 +29,36 @@ public class Aquario {
         return volumeDois;
     }
 
-    public double 
+    public double getLargura(){
+        return largura;
+    }
+
+    public void setLargura(double largura){
+        if(largura <= 0){
+            throw new RuntimeException("valor invalido para largura");
+        }
+        this.largura = largura;
+    }
+
+    public double getComprimento(){
+        return comprimento;
+    }
+
+    public void setComprimento(double comprimento){
+        if(comprimento <= 0){
+            throw new RuntimeException("valor invalido para comprimento");
+        }
+        this.comprimento = comprimento;
+    }
+
+    public double getAltura(){
+        return altura;
+    }
+
+    public void setAltura(double altura){
+        if(altura <= 0){
+            throw new RuntimeException("valor invalido para altura");
+        }
+        this.altura = altura;
+    }
 }

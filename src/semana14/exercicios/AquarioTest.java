@@ -77,10 +77,22 @@ public class AquarioTest {
         double[] esperado = {500, 750};
         assertArrayEquals(esperado, litros);
     }
+
     @Test
-    public void getComValorPositivoAltura(){
+    public void apresentarGetAltura(){
         Aquario aquario = new Aquario(100, 20, 30);
 
-        float altura
+        double altura = aquario.getAltura();
+
+        assertEquals(20, altura);
+    }
+
+    @Test
+    public void apresentarGetLargura(){
+        Aquario aquario = new Aquario(100, 20, 30);
+
+        double largura = aquario.getLargura();
+
+        assertEquals(30, largura);
     }
 }
