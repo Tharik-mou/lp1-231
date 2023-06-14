@@ -71,4 +71,31 @@ public class ContaTest {
             contaCorrente.transferir(contaPoupanca, 110.0);
         });
     }
+
+    @Test
+    public void testaGetCodigo() {
+        Conta conta = new Conta(1, "Domingos Latorre");
+
+        int codigo = conta.getCodigo();
+
+        assertEquals(1, codigo);
+    }
+
+    @Test
+    public void testaGetCorrentista() {
+        Conta conta = new Conta(1, "Domingos Latorre");
+
+        String correntista = conta.getCorrentista();
+
+        assertEquals("Domingos Latorre", correntista);
+    }
+
+    @Test
+    public void testaGetSaldo() {
+        Conta conta = new Conta(1, "Domingos Latorre");
+
+        double saldo = conta.getSaldo();
+
+        assertEquals(0.0, saldo);
+    }
 }

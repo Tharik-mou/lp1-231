@@ -53,4 +53,24 @@ public class Pessoa {
             }
         }
     }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setAltura(int altura) {
+        if(altura <= 0) 
+            throw new RuntimeException("Altura inválida");
+        this.altura = altura;
+    }
+
+    public void setPeso(double peso) {
+        if(peso <= 0.0) 
+            throw new RuntimeException("Peso inválido");
+        this.peso = peso;
+    }
 }

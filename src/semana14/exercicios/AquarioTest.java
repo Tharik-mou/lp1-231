@@ -1,7 +1,8 @@
 package semana14.exercicios;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals; 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals; 
 
 public class AquarioTest {
@@ -94,5 +95,105 @@ public class AquarioTest {
         double largura = aquario.getLargura();
 
         assertEquals(30, largura);
+    }
+    @Test
+    public void testaGetComprimento() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        double comprimento = aquario.getComprimento();
+
+        assertEquals(30.0, comprimento);
+    }
+     @Test
+    public void testaSetComprimento() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+        aquario.setComprimento(20.0);
+
+        double comprimento = aquario.getComprimento();
+
+        assertEquals(20.0, comprimento);
+    }
+    @Test
+    public void testaSetComprimentoNegativo() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        assertThrows(RuntimeException.class, () -> {
+            aquario.setComprimento(-30.0);
+        });
+    }
+
+    @Test
+    public void testaSetComprimentoZero() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        assertThrows(RuntimeException.class, () -> {
+            aquario.setComprimento(0.0);
+        });
+    }
+
+    @Test
+    public void testaSetAltura() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+        aquario.setAltura(60.0);
+
+        double altura = aquario.getAltura();
+
+        assertEquals(60.0, altura);
+    }
+
+     @Test
+    public void testaSetAlturaNegativa() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        assertThrows(RuntimeException.class, () -> {
+            aquario.setAltura(-40.0);
+        });
+    }
+
+     @Test
+    public void testaSetAlturaZero() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        assertThrows(RuntimeException.class, () -> {
+            aquario.setAltura(0.0);
+        });
+    }
+
+    @Test
+    public void testaSetLargura() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+        aquario.setLargura(70.0);
+
+        double largura = aquario.getLargura();
+
+        assertEquals(70.0, largura);
+    }
+
+    @Test
+    public void testaSetLarguraNegativa() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        assertThrows(RuntimeException.class, () -> {
+            aquario.setLargura(-50.0);
+        });
+    }
+
+    @Test
+    public void testaSetLarguraZero() {
+
+        Aquario aquario = new Aquario(30.0, 40.0, 50.0);
+
+        assertThrows(RuntimeException.class, () -> {
+            aquario.setLargura(0.0);
+        });
     }
 }
